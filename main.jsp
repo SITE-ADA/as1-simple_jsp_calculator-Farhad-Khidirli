@@ -1,16 +1,10 @@
 <html>
 	<head>
       <title>Assignment I - Simple Calculator | Result Page</title>
-	  <style> body{background: rgba(0, 128, 0, 0.3)} </style>
+	  <style> body {background: linear-gradient(to right, lightgreen, lightblue)} </style>
 	</head>
 	<%@ page errorPage = "error.jsp" %>
 	<body>
-		<ul>
-			<li><p>First variable is:<%= request.getParameter("first_variable")%></p></li>
-			<li><p>Second variable is: <%= request.getParameter("second_variable")%></p></li>
-			<li><p>Operator is: <%= request.getParameter("oper")%></p></li>
-		</ul>
-		
 		<% 
 			double var1 = Double.parseDouble(request.getParameter("first_variable"));
 			double var2 = Double.parseDouble(request.getParameter("second_variable"));
@@ -41,13 +35,14 @@
 		//		out.println("Occured exception: " + e.getMessage());
 		//		check = false; }
 		%>
-		<br>
+			<h3 align = "center">Dear Friend, thank you for using this calculator!</h3>
 		<%
 			if(check)
 			{
 				Double result = new Double(sum);
-				out.println("Answer is: " + result.toString());
+				out.println("<b>Answer is: </b>" + result.toString());
 			}
 		%>
+			<br><br><button> <a href="userData.jsp" style="text-decoration:none;">Please, click on me to see your cookies details </button>
 	</body>
 </html>
